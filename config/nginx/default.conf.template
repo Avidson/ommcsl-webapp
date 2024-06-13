@@ -1,0 +1,40 @@
+
+
+# upstream for uWSGI
+
+upstream uwsgi_app {
+    server unix:///app/OMS/uwsgi_app.sock;
+}
+    server {
+            listen          80;
+            server_name     www.ommcsl.loan ommcsl.loan;
+            return 301 https://ommcsl.loan$request_uri;
+        }
+    server {
+        listen                  443 ssl;
+        ssl_certificate         /app/ssl/ommcsl_loan_cert_chain.crt;
+        ssl_certificate_key     /app/ssl/ommcsl_loan.key;
+        server_name             www.ommcsl.loan ommcsl.loan;
+        error_log               stderr warn;
+        access_log              /dev/stdout main;
+
+
+    location / {
+        include     /etc/nginx/uwsgi_params;
+        uwsgi_pass  uwsgi_app;
+        }   
+
+    location /static/ {
+            alias /app/static/;
+        }
+
+    location /staticfiles/ {
+            alias /app/staticfiles/;
+        }
+
+    location /media/ {
+            alias /app/media/;
+        }
+
+    }
+        

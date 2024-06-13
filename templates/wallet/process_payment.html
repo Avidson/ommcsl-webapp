@@ -1,0 +1,45 @@
+{% extends "navs/other_func_nav.html" %}
+{% load widget_tweaks %}
+
+{% block content%}
+
+<div class="container mt-3 py-5" style="font-weight:bolder">
+    <h6>Proceed with payment.</h6>
+
+    <table class="table">
+        <tr>
+            <th>Member:</th>
+            <td><h6>{{ payment.client_name }}</h6></td>
+        </tr>
+        <tr>
+            <th>E-mail:</th>
+            <td><a href="mailto:{{ profile.email }}">{{ profile.email }}</a></td>
+        </tr>
+        <tr>
+            <th>Total amount:</th>
+            <td>&#8358;{{ payment.get_amount }}</td>
+        </tr>
+        <tr>
+            <th>Status:</th>
+            <td>{% if payment.paid %}Paid{% else %}Pending payment{% endif %}</td>
+        </tr>
+        <tr>
+            <th>Payment payment:</th>
+            <td>
+                {% if payment.payment_ref %}
+                    ##################
+                {% endif %}
+            </td>
+        </tr>
+    </table>
+    <form action="" method="post">
+        <div class="text-center"><button type="submit">Pay Now</button></div>
+        {% csrf_token %}
+    </form>
+</div>
+<center>
+    <br/><br/>
+        <a href="{% url 'main:dashboard' %}"><button class="submit-btn">Close</button></a>
+        </center>
+    </section>
+{% endblock %}

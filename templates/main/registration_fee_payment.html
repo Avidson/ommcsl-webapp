@@ -1,0 +1,79 @@
+{% extends "navs/other_func_nav.html" %}
+
+ {% block content %}
+ {% load static %}
+
+ <!-- ======= Contact Section ======= -->
+ 
+ <section class="form-container d-flex" >
+       
+        <div class="col-lg-6">
+          {% for message in messages %}
+          <button style="border-style:solid; border-radius:20px;color:red;">Error!! <br/>{{message}}</button>
+          {% endfor %}
+          <br/><br/>
+            {% if user.is_authenticated %}
+              <h5>Dear {{user | capfirst}}</h5>
+            {% endif %}
+          
+          <br>
+            <form action="" method="post" role="form" class="main-form" enctype="multipart/form-data">
+            <h3 style="font-weight:bolder; color: black">YOU WILL BE CHARGED &#8358;1000<br> FOR FILING SLOT ON OUR DATABASE SYSTEM</h3>
+            {% csrf_token %}
+            <div class="row">
+              <div class="col-md-6 form-group">
+                <div class="col-md-6 form-group">
+                  <input type="text" name="first-name" class="form-control" id="name" placeholder="First Name" required>
+                </div>
+                <div class="col-md-6 form-group">
+                  <input type="text" name="last-name" class="form-control" id="name" placeholder="Last Name" required>
+                </div>
+              <div class="col-md-6 form-group mt-3 mt-md-0">
+                <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
+              </div>
+              <div class="col-md-6 form-group">
+                <input type="text" name="occupation" class="form-control" id="name" placeholder="Occupation" required>
+              </div>
+              <div class="col-md-6 form-group mt-3 mt-md-0">
+                <input type="text" class="form-control" name="state-of-residence" id="email" placeholder="State of Residence" required>
+              </div>
+            <div class="col-md-6 form-group mt-3 mt-md-0">
+                <input type="number" class="form-control" name="phone-number" id="email" placeholder="Phone Number" required>
+              </div>
+              <div class="col-md-6 form-group mt-3 mt-md-0">
+                <input type="text" class="form-control" name="home-address" id="email" placeholder="Home Address" required>
+              </div>
+              <div class="col-md-6 form-group">
+                <input type="number" name="amount" value="1000" class="form-control" id="name" placeholder="&#8358; 0.0" readonly required>
+               <datalist id="pay-amount">
+                  <option value="1000">
+              </datalist>
+              </div>
+              <h6>FILL OUT NEXT OF KIN DETAIL</h6>
+              <div class="col-md-6 form-group">
+                <input type="text" name="kins-fullname" class="form-control" id="name" placeholder="Next of Kin Full Name" required>
+              </div>
+              <div class="col-md-6 form-group mt-3 mt-md-0">
+                <input type="number" class="form-control" name="kins-phone-number" id="email" placeholder="Next of Kin Phone Number" required>
+              </div>
+              <div class="col-md-6 form-group mt-3 mt-md-0">
+                <input type="text" class="form-control" name="kins-home-address" id="email" placeholder="Next of Kin Home Address" required>
+              </div>
+              <div class="row">
+                <p><img id="output" width="200"/></p>
+                Upload Your Passport
+                <input type="file" name="passport" accept="image/*" onchange="loadFile(event)" required>
+              </div>
+            </div>
+            <div class="text-center"><button type="submit">Proceed to Pay</button></div>
+          </form>
+         
+
+        </div><!-- End Contact Form -->
+      
+      </div>
+    </div>
+    
+  </section><!-- End Contact Section -->
+ 
+  {% endblock %}

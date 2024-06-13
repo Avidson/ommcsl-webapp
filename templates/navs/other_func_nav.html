@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>OMMSCL- Dashboard</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  {% load static %}
+  <!-- Favicons -->
+  <link href="{% static 'assets/img/omslogo.png' %}" rel="icon">
+  <link href="{% static 'assets/img/omslogo.png' %}" rel="apple-touch-icon">
+  
+
+  {% load static %}
+  <!-- Vendor CSS Files -->
+  <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/aos/aos.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/remixicon/remixicon.css' %}" rel="stylesheet">
+
+  {% load static %}
+  <!-- Template Main CSS File -->
+  <link href="{% static 'assets/css/main.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/css/passcode.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/css/shares.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/css/inAppdonations.css' %}" rel="stylesheet">
+</head>
+
+<body class="page-contact" id="other-func-background">
+
+  
+  <main id="dashboard-main">
+    <div class="top-navigation py-4">
+      <a href="" onclick="history.back()">
+        <i class="bi bi-arrow-left" style="margin-top:20px; margin-left:15px; size: 100px;"></i>
+      </a>
+      </div>
+  
+    {% block content %}
+
+
+
+    {% endblock %}
+
+
+    </main>
+
+  <!-- Vendor JS Files -->
+  <script src="{% static 'assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/aos/aos.js' %}"></script>
+  <script src="{% static 'assets/vendor/glightbox/js/glightbox.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/swiper/swiper-bundle.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/php-email-form/validate.js' %}"></script>
+
+  <!-- Template Main JS File -->
+  <script src="{% static 'assets/js/main.js' %}"></script>
+  <script src="{% static 'assets/js/newjs.js' %}"></script>
+  <script src="{% static 'assets/js/offline.js' %}"></script>
+</div>
+</body>
+
+</html>

@@ -1,0 +1,34 @@
+{% extends 'navs/other_func_nav.html' %}
+
+
+{% block content %}
+{% load static %}
+
+
+<div class="shares_container">
+
+<div class="row">
+    <p class="top-check"><i class="bi bi-check"></i></p>
+    <p><h3>One (1) Billion<br> Shares. <br> Buy @ &#8358;1 Per Share <br>(Min. &#8358;20,000 & Max. &#8358;1,000,000)</h3></p>
+</div>
+
+<div class="row-2">
+
+    <div class="buy-shares">
+        <a href="{% url 'Shares:share_payment_view' %}"><button>BUY SHARES</button></a>
+    </div>
+
+<div class="list-of-shares-bought">
+<a href="{% url 'Shares:shares_detail' %}"><button>YOUR <br> SHARES</button></a>
+</div>
+
+<br/><br/>
+    <a href="{% url 'main:dashboard' %}"><button class="submit-btn">Close</button></a>
+</div>
+
+
+</div>
+
+
+
+{% endblock %}

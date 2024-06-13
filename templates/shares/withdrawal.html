@@ -1,0 +1,24 @@
+{% extends 'navs/other_func_nav.html' %}
+
+
+{% block content %}
+{% load static %}
+
+<center>
+    <br/><br/>
+    <h2>CASH WITHDRAWAL</h2>
+    <br/><br/>
+    <button class="text-center"
+    style="border-radius: 50%; background-color:brown; 
+    width: 70px; height:70px; color:white; 
+    font-weight: bolder; border-style: none; margin-top: 20px;">
+    <i class="bi bi-check" style="font-weight: bolder; font-size:xx-large;"></i><br></button>
+    <br/><br/>
+    <h4><b>Only For More Than<br>Six Month Active Members</b></h4>
+    <br/><br/>
+    <a href="{% url 'main:dashboard' %}"><button class="submit-btn">Close</button></a>
+</center>
+
+
+
+{% endblock %}

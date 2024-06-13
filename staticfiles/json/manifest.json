@@ -1,0 +1,56 @@
+{
+    "short_name": "OMMCSL LITE",
+    "name": "OMMCSL LITE: For Cooperative Loans!",
+    "icon": [
+        {
+            "src": "../static/assets/omslogo.png",
+            "type": "image/svg+xml",
+            "sizes" : "192x192" 
+        },
+        {
+            "src": "../static/assets/omslogo.png",
+            "type": "image/svg+xml",
+            "sizes" : "512x512" 
+        }
+        
+    ],
+    "id": "/?source=pwa",
+    "start_url" : "/?source=pwa",
+    "background_color": "rgb(146, 93, 93)",
+    "theme_color" : "rgb(146, 93, 93)",
+    "display": "standalone",
+    "scope":  "/",
+    "description": "Loan App For Cooperative Society",
+    "orientation": "any",
+    "shortcuts": [
+        {
+            "name": "Become a member by creating an account",
+            "short_name": "Membership",
+            "description": "Register to have access to loans",
+            "url": "/?source=pwa",
+            "icons": [{ "src": "..static/assets/img/hero-bg2.png", "sizes": "192x192" }]
+        }
+    ],
+
+    "screenshots": [
+        {
+            "src":"../static/assets/screenshot1.png",
+            "sizes":"540x720",
+            "type":"image/png",
+            "form_factor": "narrow"
+        },
+        {
+            "src":"../static/assets/screenshot2.png",
+            "sizes":"540x720",
+            "type":"image/png",
+            "form_factor": "narrow"
+        },
+        {
+            "src":"../static/assets/screenshot3.png",
+            "sizes":"540x720",
+            "type":"image/png",
+            "form_factor": "narrow"
+        }
+    ]
+   
+}

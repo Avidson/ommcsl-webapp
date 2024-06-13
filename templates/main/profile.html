@@ -1,0 +1,80 @@
+{% extends "navs/other_func_nav.html" %}
+{% load widget_tweaks %}
+
+{% load static %}
+{% block content%}
+
+<div class="container mt-3" style="font-weight:bolder">
+    <center>
+        <h4 style="margin-bottom: 25px;">YOUR PROFILE</h4>
+    </center>
+  {% for profile_item in profiles %}
+       <table class="table">
+        <center>
+            <div class="" style="margin-bottom: 20px;">
+                <img src="{% if profile_item.passport %}{{ profile_item.passport.url }}{% else %}
+                {% static 'assets/img/no_image.jpg' %}{% endif %}" width="120" height="120" 
+                style="border-radius: 50%;">
+            </div>
+        </center>
+        <tr>
+            <th>Nickname:</th>
+            <td><h6>{{ profile_item.profile_owner }}</h6></td>
+        </tr>
+        <tr>
+            <th>First Name:</th>
+            <td><h6>{{ profile_item.first_name }}</h6></td>
+        </tr>
+        <tr>
+            <th>Last Name:</th>
+            <td><h6>{{ profile_item.last_name }}</h6></td>
+        </tr>
+        <tr>
+            <th>Occupation:</th>
+            <td><h6>{{ profile_item.occupation }}</h6></a></td>
+        </tr>
+        <tr>
+            <th>Telephone:</th>
+            <td>{{ profile_item.phone_number }}</td>
+        </tr>
+        <tr>
+            <th>Email:</th>
+            <td>{{ profile_item.email }}</td>
+        </tr>
+        <tr>
+            <th>Registration Fee:</th>
+            <td>&#8358;{{ profile_item.get_registration_fee }}</td>
+        </tr>
+        <tr>
+            <th>Fee Status:</th>
+            <td>{% if profile_item.paid %}Paid{% else %}Pending payment{% endif %}</td>
+        </tr>
+        <tr>
+            <th>Next of Kin Full Name:</th>
+            <td>{{ profile_item.next_of_kin_full_name }}</td>
+        </tr>
+        <tr>
+            <th>Next of Kin Phone Number:</th>
+            <td>{{ profile_item.next_of_kin_phone_number }}</td>
+        </tr>
+        <tr>
+            <th>Next of Kin Address:</th>
+            <td>{{ profile_item.next_of_kin_address }}</td>
+        </tr>
+    
+    </table>
+    <div class="" style="margin-top:40px">
+        <center>
+            <h5>Membership Identification No:</h5>
+            <h6><u>{{ profile_item.client_identification_number }}</u></h6>
+        </center>
+    </div>
+    <center>
+        <br/><br/>
+            <a href="{% url 'main:dashboard' %}"><button class="submit-btn">Close</button></a>
+            </center>
+{% endfor %}
+</div>
+
+
+{% endblock %}

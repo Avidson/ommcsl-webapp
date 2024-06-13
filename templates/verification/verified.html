@@ -1,0 +1,21 @@
+{% extends 'navs/other_func_nav.html' %}
+
+{% block content %}
+<center>
+<div style="margin-top:50px;">
+<button class="text-center"
+style="border-radius: 50%; background-color:brown; 
+width: 70px; height:70px; color:white; 
+font-weight: bolder; border-style: none; margin-top: 20px;">
+<i class="bi bi-check" style="font-weight: bolder; font-size:xx-large;"></i><br></button>
+<legend style="font-family:'Courier New', Courier, monospace">You Have Been Verified!</legend>
+
+<div>
+<a href="{% url 'main:dashboard' %}">
+    <button class="submit-btn">Close</button>
+        </a>
+</div>
+</div>
+</center>
+
+{% endblock %}

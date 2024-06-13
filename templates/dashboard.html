@@ -1,0 +1,165 @@
+{% extends 'navs/dashboard_nav.html' %}
+
+
+{% block content %}
+{% load static %}
+
+
+<section id='dashboard-section'>
+    <div class="dashboard-profile">
+        <div></div>
+        <div>
+            <a href="{{ profile.get_absolute_url }}">
+            <button style="border-radius:50%; border-style:none; float: right;
+             margin-right:25px; font-size:large; background-color:white;">
+             <i class="bi bi-person"></i>
+            </button></a>
+        </div>
+    </div>
+    <div class="user-profile">
+        <center>
+            <div>
+            <div>
+            {% if user.is_authenticated %}
+            <div>
+                <a href="{{ profile.get_absolute_url }}"><button class="dashboard-initial" id="profilepix">
+                    {{ user | truncatechars:2 | first | capfirst }}
+                    </button>
+                    </a>
+            </div>
+            Hello, {{user | capfirst}}<span>{% if verified_tag.verification_status is True %}
+                    <i class="bi bi-check" style="font-weight: bolder; font-size:small;
+                    margin-bottom: 0px; color:white; background-color: #922c17;
+                    border-radius: 50%; border-style: none;"></i>
+                    <br>
+                {% else %}
+
+                {% endif %}
+            </span>
+            {% endif %}
+            </div>
+            </div>
+            <div>
+                <button id="logout"><a href="{% url 'main:logout' %}">Logout</a></button>
+            </div>
+        </center>
+
+        <center>
+        <div id="acct-balance">
+            <div>Savings:{% if monthly_pay_total %}
+                &#8358;{{ monthly_pay_total }}
+                {% else %} 
+                &#8358;0.00
+                {% endif %}</div></div></center>
+        
+        <div class="account-balance-row">
+            <h5 class="h6-background">Donation:<br/>
+                {% if total_amount_donations %}
+                &#8358;{{total_amount_donations}}
+                {% else %} 
+                &#8358;0.00</h5>
+                {% endif %}
+            <h5 class="h6-background">Shares:<br/>
+                {% if all_shares_bought %} 
+                &#8358;{{ all_shares_bought }} {% else %} &#8358;0.00 {% endif %}</h5>
+            <h5 class="h6-background">Mnthly Due:<br/>
+                {% if monthly_pay_total %} 
+                &#8358;{{ monthly_pay_total }} {% else %} &#8358;0.00 {% endif %}</h5>
+            <h5 class="h6-background">Loan:
+                {% if total_loan_approved %}
+                &#8358;{{total_loan_approved}} <br/> Return:&#8358;{{total_loan_approved_emi}} 
+                {% else %}
+                &#8358;0.00 <br/>
+                {% endif %}</h5>
+        </div>
+        
+
+    </div>
+    <hr>
+    <div class="dashboard-utils">
+        <a href="{% url 'Loan_Request:loan-request' %}"><div class="message-us">
+            <center>
+            <i class="bi bi-briefcase">
+            </i>
+            <br><h6 style="font-size:x-small; font-weight: bolder;">Request <br>Loan</h6>
+            </center>
+    </div></a>
+
+    <a href="{% url 'Membership:lets-verify-you' %}"><div class="get-verified"><center><i class="bi bi-check"></i>
+                <br><h6 style="font-size:x-small; font-weight: bolder;">Get <br>Verified</h6></center>
+    </div></a>
+
+    <a href="{% url 'Monthly_due:home_monthly' %}"><div class="monthly-due"><center><i class="bi bi-clock"></i>
+        <br><h6 style="font-size:x-small; font-weight: bolder;">Monthly<br> Due</h6></center>
+    </div></a>
+
+    <a href="{% url 'Share:share_dex' %}"><div class="message-us"><center><i class="bi bi-cash"></i>
+        <br><h6 style="font-size:x-small; font-weight: bolder;">Shares & <br> Investment</h6></center>
+    </div></a>
+
+    <a href="{% url 'Share:withdrawal_request' %}"><div class="get-verified"><center><i class="bi bi-cash"></i>
+            <br><h6 style="font-size:x-small; font-weight: bolder;">Withdrawal <br>Request</h6></center>
+    </div></a>
+
+    <a href="{% url 'inAppDonations:payment-gateway' %}"><div class="monthly-due"><center><i class="bi bi-heart"></i>
+            <br><h6 style="font-size:x-small; font-weight: bolder;">Send <br>Donation</h6></center>
+    </div></a>
+
+    <a href="{% url 'main:account_statement' %}"><div class="monthly-due"><center><i class="bi bi-list"></i>
+        <br><h6 style="font-size:x-small; font-weight: bolder;">Account <br>Statement</h6></center>
+    </div></a>
+
+    <a href="{% url 'main:e-transact' %}"><div class="monthly-due"><center><i class="bi bi-key"></i>
+        <br><h6 style="font-size:x-small; font-weight: bolder;">Create <br>E-Pin</h6></center>
+    </div></a>
+
+    <a href="{% url 'ecommerce:product_list' %}"><div class="monthly-due"><center><i class="bi bi-cart"></i>
+        <br><h6 style="font-size:x-small; font-weight: bolder;">Shop With<br>Us</h6></center>
+    </div></a>
+    
+    </div>
+    <hr>
+    
+           <!-- Ads section begins -->
+            <div class="container">
+                <h4>Your Ads</h4>
+                <div class="row g-5 align-items-center">
+                    
+                    <div class="col-md-12 col-lg-5">
+                        <div id="carouselId" class="carousel slide position-relative" data-bs-ride="carousel">
+                            {% for ads in available_ads %}
+                            <div class="carousel-inner" role="listbox">
+                            <div class="carousel-item active rounded">
+                                <div>
+                             <img src="{{ ads.image.url }}" class="img-fluid w-100 h-100 rounded" width="300" height="300" alt="Second slide">
+
+                                <a href="{{ ads.ads_url }}" class="ads-info-font">Visit our page</a>
+                                <p class="ad-info-font">Organization: {{ ads.organisation_name }}</p>
+                            </div>
+                            </div>
+                              {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <!-- Ads section Ends -->
+   </div>
+</section>
+
+<script>
+
+// Change the type of input to password or text
+function Toggle() {
+    let temp = document.getElementById("showfigure");
+     
+    if (temp.type === "password") {
+        temp.type = "text";
+    }
+    else {
+        temp.type = "text";
+    }
+}
+</script>
+
+{% endblock %}

@@ -1,0 +1,178 @@
+{% extends 'navs/register_head.html' %}
+
+
+
+{% block content %}
+    <!-- ======= Contact Section ======= -->
+    <section id="contact" class="contact">
+      <div class="container position-relative" data-aos="fade-up">
+
+        <div class="row gy-4 d-flex justify-content-end">
+
+          <div class="col-lg-5" data-aos="fade-up" data-aos-delay="100">
+
+            <div class="info-item d-flex">
+              <i class="bi bi-geo-alt flex-shrink-0"></i>
+              <div>
+                <h4>Location:</h4>
+                <p>91 Ademola Adetokunbo Crescent, Wuse 2, Abuja, Nigeria</p>
+              </div>
+            </div><!-- End Info Item -->
+
+            <div class="info-item d-flex">
+              <i class="bi bi-envelope flex-shrink-0"></i>
+              <div>
+                <h4>Email:</h4>
+                <p>obidientmmcsl@gmail.com</p>
+              </div>
+            </div><!-- End Info Item -->
+
+            <div class="info-item d-flex">
+              <i class="bi bi-phone flex-shrink-0"></i>
+              <div>
+                <h4>Call:</h4>
+                <p>+2348034521334, +2348036802144 <br>
+                  +2348130926924
+                </p>
+              </div>
+            </div><!-- End Info Item -->
+
+          </div>
+
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="250">
+
+            <form action="" method="post" role="form" class="php-email-form" enctype="multipart/form-data">
+              {% csrf_token %}
+              <fieldset>
+                <legend>Personal Data:</legend>
+              <div class="row">
+                <div class="col-md-6 form-group">
+                  <input type="text" name="first" class="form-control" id="name" placeholder="First Name" required>
+                </div>
+                <div class="col-md-6 form-group mt-3 mt-md-0">
+                  <input type="text" class="form-control" name="surname" id="email" placeholder="Last Name" required>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 form-group">
+                  <input type="text" name="gender" class="form-control" id="name" list="genders" placeholder="Gender" required>
+                  <datalist id="genders">
+                    <option value="Male"><option value="Female">
+                  </datalist>
+                </div>
+                <div class="col-md-6 form-group mt-3 mt-md-0">
+                  <input type="number" class="form-control" name="age" id="email" list="ages" placeholder="Age" required>
+                  <datalist id="ages">
+                    <option value="18"><option value="19"><option value="20">
+                    <option value="21"><option value="22"><option value="23">
+                    <option value="24"><option value="25"><option value="26">
+                    <option value="27"><option value="28"><option value="29">
+                    <option value="30"><option value="31"><option value="32">
+                    <option value="33"><option value="34"><option value="35">
+                    <option value="36"><option value="37"><option value="38">
+                    <option value="39"><option value="40"><option value="41">
+                    <option value="42"><option value="43"><option value="44">
+                    <option value="45"><option value="46"><option value="47">
+                    <option value="48"><option value="49"><option value="50">
+                    <option value="51"><option value="52"><option value="53">
+                    <option value="54"><option value="55"><option value="56">
+                    <option value="57"><option value="58"><option value="59"> 
+                    <option value="60"><option value="61"><option value="62">
+                    <option value="63"><option value="64"><option value="65">
+                    <option value="66"><option value="67"><option value="68">
+                    <option value="69"><option value="70"><option value="71">
+                    <option value="72"><option value="73"><option value="74">
+                    <option value="75"><option value="76"><option value="77">
+                    <option value="78"><option value="79"><option value="80">
+                    <option value="81"><option value="82"><option value="83">
+                    <option value="84"><option value="85"><option value="86">
+                    <option value="87"><option value="88"><option value="89">
+                    <option value="90"><option value="91"><option value="92">
+                    <option value="93"><option value="94"><option value="95">
+                    <option value="96"><option value="97"><option value="98">
+                    <option value="99"><option value="100"><option value="100 and Above">                   
+                </datalist>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 form-group">
+                  <input type="text" name="kin" class="form-control" id="name" placeholder="Next of Kin" required>
+                </div>
+                <div class="col-md-6 form-group mt-3 mt-md-0">
+                  <input type="number" class="form-control" name="kin-phone" id="email" placeholder="Next of Kin telephone" required>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 form-group mt-3 mt-md-0">
+                  <input type="date" class="form-control" name="date" id="subject" placeholder="date" required>
+                </div>
+                <div class="col-md-6 form-group mt-3 mt-md-0">
+                  <input type="text" class="form-control" name="id-type" list="ids" id="subject" placeholder="ID Type" required>
+                  <datalist id="ids">
+                    <option value="Voter Card">
+                      <option value="National Identificattion Number (NIN)">
+                        <option value="Driver's Licence">
+
+                  </datalist>
+                </div>
+                </div>
+              <div class="row">
+              <div class="col-md-6 form-group mt-3 mt-md-0">
+                <input type="text" class="form-control" name="occupation" id="subject" placeholder="Occupation" required>
+              </div>
+              <div class="col-md-6 form-group mt-3 mt-md-0">
+                <input type="text" class="form-control" name="address" id="subject" placeholder="Address" required>
+              </div>
+              </div>
+              <div class="row">
+              <div class="col-md-6 form-group mt-3 mt-md-0">
+                <input type="text" class="form-control" name="city" id="subject" placeholder="City" required>
+              </div>
+              <div class="col-md-6 form-group mt-3 mt-md-0">
+                <input type="text" class="form-control" name="state" id="subject" list='states' placeholder="State" required>
+                <datalist id="states">
+                  <option value="Abia"><option value="Adamawa"><option value="Akwa Ibom">
+                  <option value="Anambra"><option value="Bauchi"><option value="Bayelsa">
+                  <option value="Benue"><option value="Borno"><option value="Cross River">
+                  <option value="Delta"><option value="Ebonyi"><option value="Edo">
+                  <option value="Ekiti"><option value="Enugu"><option value="FCT">
+                  <option value="Gombe"><option value="Imo"><option value="Jigawa">
+                  <option value="Kaduna"><option value="Kano"><option value="Katsina">
+                  <option value="Kebbi"><option value="Kogi"><option value="Kwara">
+                  <option value="Lagos"><option value="Nasarawa"><option value="Niger">
+                  <option value="Ogun"><option value="Ondo"><option value="Osun">
+                  <option value="Oyo"><option value="Plateau"><option value="Rivers">
+                  <option value="Sokoto"><option value="Taraba"><option value="Yobe">
+                  <option value="Zamfara">
+              </datalist>
+              </div>
+              </div>
+              <div class="row">
+              <div class="col-md-6 form-group mt-3 mt-md-0">
+                <input type="number" class="form-control" name="phone" id="subject" placeholder="Applicant's telephone" required>
+              </div>
+              <div class="col-md-6 form-group mt-3 mt-md-0">
+                <input type="email" class="form-control" name="email" id="subject" placeholder="Email" required>
+              </div>
+            
+              <div class="row">
+                <p><img id="output" width="200"/></p>
+                Upload Passport
+                <input type="file" name="passport" accept="image/*" onchange="loadFile(event)" required>
+               
+              </div>
+             
+              </div>
+             
+              <div class="text-center"><button type="submit">Submit Form</button></div>
+              </fieldset>
+            </form>
+
+          </div><!-- End Contact Form -->
+
+        </div>
+
+      </div>
+    </section><!-- End Contact Section -->
+
+ {% endblock %}

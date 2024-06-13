@@ -1,0 +1,8 @@
+[{
+      "relation": ["delegate_permission/common.handle_all_urls"],
+      "target": {
+        "namespace": "android_app",
+        "package_name": "loan.ommcsl.twa",
+        "sha256_cert_fingerprints": ["04:93:C2:F4:5F:A6:4E:E8:F1:2F:41:E0:79:AF:51:AE:6D:07:F6:E9:A1:8A:A1:B9:26:FC:A6:E9:EA:5D:10:58"]
+      }
+    }]

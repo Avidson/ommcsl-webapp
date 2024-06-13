@@ -1,0 +1,28 @@
+{% extends 'navs/other_func_nav.html' %}
+
+{% block content %}
+<center>
+    <div style="margin-top:50px;">
+<button class='verification' 
+style="border-radius: 50%; background-color:brown; 
+width: 70px; height:70px; color:white; 
+font-weight: bolder; border-style: none; margin-top: 20px;">
+<i class="bi bi-wrong" style="font-weight: bolder; font-size:xx-large;"></i><br></button>
+<legend style="font-family:'Courier New', Courier, monospace"><p>You Have To Be A
+    <br>Verified Member To <br>Request A Loan.</p>
+</legend>
+
+<div>
+    <a href="{% url 'Membership:lets-verify-you' %}">
+        <button class='submit-btn'>Verifiy Me</button>
+            </a>
+    </div>
+</div>
+<div>
+    <a href="{% url 'main:dashboard' %}">
+        <button class="submit-btn">Close</button>
+            </a>
+    </div>
+</center>
+
+{% endblock %}

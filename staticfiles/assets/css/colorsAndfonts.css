@@ -1,0 +1,18 @@
+/* Fonts */
+:root {
+    --font-default: "Open Sans", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    --font-primary: "Montserrat", sans-serif;
+    --font-secondary: "Raleway", sans-serif;
+  }
+  
+  /* Colors */
+  :root {
+    --color-default: #2b180d;
+    --color-primary: rgb(146, 93, 93);
+    --color-secondary: rgb(14, 13, 13);
+  }
+  
+  /* Smooth scroll behavior */
+  :root {
+    scroll-behavior: smooth;
+  }

@@ -1,0 +1,17 @@
+{% extends "navs/other_func_nav.html" %}
+{% load widget_tweaks %}
+
+{% block content%}
+
+<div class="container mt-3">
+    <h1>Your payment failed to process.</h1>
+    <p>Please try it again.</p>
+</div>
+
+<div>
+    <a href="{% url 'main:logout' %}">
+        <button class="submit-btn">Close</button>
+            </a>
+    </div>
+
+{% endblock %}

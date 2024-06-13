@@ -1,0 +1,45 @@
+{% extends "navs/other_func_nav.html" %}
+ 
+ 
+ {% block content %}
+ {% load static %}
+ 
+ <!-- ======= Contact Section ======= -->
+
+ {% if user.is_authenticated %}
+
+ <section class="form-container">
+
+        <div class="col-lg-6">
+
+          <form action="" method="post" role="form" class="main-form">
+            <h3>PAYMENT</h3>
+            {% csrf_token %}
+            <div class="row">
+              <div class="col-md-6 form-group">
+                <h3>Topup Amount</h3>
+                <input type="number" name="amount" 
+                class="form-control" id="name" placeholder="N0.0" required>
+              </div>
+            </div>
+            <div class="text-center"><button type="submit">Proceed to Pay</button></div>
+          </form>
+
+        </div>
+        <!-- End Contact Form -->
+
+      </div>
+    </div>
+    <div>
+      <a href="{% url 'main:dashboard' %}">
+          <button class="submit-btn">Close</button>
+              </a>
+      </div>
+</section>
+  <!-- End Contact Section -->
+
+{% else %}
+  <h6>You need to sign-in to perform this task</h6>
+{% endif %}
+
+{% endblock %}

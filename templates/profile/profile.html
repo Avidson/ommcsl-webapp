@@ -1,0 +1,74 @@
+{% extends 'navs/dashboard_nav.html' %}
+
+
+{% block content %}
+{% load static %}
+
+<div id="profile-page">
+
+<center style="margin-top:35px">
+{% if user.is_authenticated %}
+
+    <img src="{{profiler.profile_img.url}}" style="width:120px; height:120px; border-radius: 50%;" id="profilepix">
+    <br/><br/>
+    {{ user.get_username }}
+    <br/><br/>
+    {{ user.get_full_name }}
+    <br/><br/>
+    Occupation: {{profiler.occupation}}<br/>
+    State of Residence: {{profiler.state_residence}}<br/>
+    Phone Number: {{profiler.phone_number}}
+    <br/><br/>
+    Last Login: {{ user.last_login }}
+
+    <br/><br/>
+
+    <a href="{{ get_absolute_url }}"><button id="logout">Update Profile</button></a> 
+
+    <br/><br/>
+
+    <a href="{% url 'main:dashboard' %}"><button id="logout">Return to Dashboard</button></a>
+
+    <br/><br/>
+    
+    {% else %}
+
+    <section id="contact">
+      <form action="" method="post" role="form" class="php-email-form" enctype="multipart/form-data">
+          {% csrf_token %}
+          <fieldset>
+            <legend>Update Profile:</legend>
+              <div class="row">
+            <div class="col-md-6 form-group">
+              <input type="text" name="occupation" class="form-control" id="name" placeholder="Occupation" required>
+            </div>
+            <div class="col-md-6 form-group mt-3 mt-md-0">
+              <input type="text" class="form-control" name="state-of-residence" id="email" placeholder="State of Residence" required>
+            </div>
+          </div>
+          <div class="row">
+          <div class="col-md-6 form-group mt-3 mt-md-0">
+              <input type="number" class="form-control" name="phone-number" id="email" placeholder="Phone Number" required>
+            </div>
+            <div class="col-md-6 form-group mt-3 mt-md-0">
+              <input type="text" class="form-control" name="home-address" id="email" placeholder="Home Address" required>
+            </div>
+                  
+          <div class="text-center"><button type="submit">Save</button></div>
+      
+          </fieldset>
+          </form>
+          </section>
+    
+  </center>
+  
+    {% endif %}
+</div>
+
+{% endblock %}
+
+<!-- <div class="row">
+    <p><img id="output" width="200"/></p>
+    Upload Passport
+    <input type="file" name="pro-image" accept="image/*" onchange="loadFile(event)" required>
+    </div> -->

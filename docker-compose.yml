@@ -1,0 +1,42 @@
+
+services:
+
+  db:
+    image: postgres:16
+    restart: always
+    volumes:
+      - ./data/db:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_DB=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+
+  web:
+    build: .
+    command: ["./wait-for-it.sh", "db:5432", "--",
+            "uwsgi", "--ini", "/app/config/uwsgi/uwsgi.ini"]
+    restart: always
+    volumes:
+      - .:/app
+
+    environment: 
+      - DJANGO_SETTINGS_MODULE=OMS.settings.pro   
+      - POSTGRES_DB=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    depends_on:
+      - db
+  
+  nginx:
+       image: nginx:1.27.0
+       restart: always
+       volumes:
+         - ./config/nginx:/etc/nginx/templates
+         - .:/app
+       ports:
+        - "80:80"
+        - "443:443"
+
+
+
+

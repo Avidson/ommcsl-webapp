@@ -1,0 +1,41 @@
+{% extends 'navs/about_head.html' %}
+{% load static %}
+
+
+{% block content %}
+    <!-- ======= About Section ======= -->
+    <section id="about" class="about">
+      <div class="container" data-aos="fade-up">
+
+        <div class="row gy-4" data-aos="fade-up">
+          <div class="col-lg-4">
+            <img src="{% static 'assets/img/omslogo.png' %}" class="img-fluid" alt="">
+          </div>
+          <div class="col-lg-8">
+            <div class="content ps-lg-5">
+              <h3>We Are About: </h3>
+              <p>
+                OMMSC(Obidient Movement Multimedia Society Cooperative) based on the value of self-help, 
+                self-responsibility, democracy, equality,
+                equity, and solidarity. In the tradition of our founders,
+                OMMCS members believe in the  ethical values of honesty, openness,
+                social responsibility and caring for others
+              </p>
+              <ul>
+                <li><i class="bi bi-check-circle-fill"></i>To promote self-help, self-reliance among members. </li>
+                <li><i class="bi bi-check-circle-fill"></i> Gaining leadership and decision-making skills</li>
+                <li><i class="bi bi-check-circle-fill"></i> Acquiring effective and efficient management</li>
+                <li><i class="bi bi-check-circle-fill"></i>Increase members business engagement</li>
+                <li><i class="bi bi-check-circle-fill"></i>Personal responsibility</li>
+                <li><i class="bi bi-check-circle-fill"></i>Gaining confidence, self discipline and positive attitude</li>
+
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End About Section -->
+  
+  {% endblock %}
+

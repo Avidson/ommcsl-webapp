@@ -1,0 +1,166 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>OMMCSL</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  {% load static %}
+  <!-- Favicons -->
+  <link rel="manifest" href="{% static 'json/manifest.json' %}" />
+  <link href="{% static 'json/assetlinks.json' %}" rel="application/json" />
+  <link href="{% static 'assets/img/omslogo.png' %}" rel="icon" />
+  <link href="{% static 'assets/img/omslogo.png' %}" rel="apple-touch-icon" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Raleway:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+
+  {% load static %}
+  <!-- Vendor CSS Files -->
+  <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/aos/aos.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/remixicon/remixicon.css' %}" rel="stylesheet">
+
+  {% load static %}
+  <!-- Template Main CSS File -->
+  <link href="{% static 'assets/css/main.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/css/passcode.css' %}" rel="stylesheet">
+ </head>
+
+<body class="page-index">
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero" class="hero d-flex align-items-center">
+    <div class="container">
+      <div class="row">
+        <div class="col-xl-4">
+          <h2>For Cooperative Loans</h2>
+          <blockquote data-aos-delay="100">
+            <p>"To get Nigeria out of the woods, we need to invest in Education, SMEs and infrastructure."
+              <br> - Peter Obi</p>
+          </blockquote>
+
+          <div class="pin-container">
+            <form method="post" action="" enctype="multipart/form-data">
+              {% csrf_token %}
+              <input type="text" name="username" autocomplete="off" id="login-username" placeholder="Nickname">
+              <input type="password" name="passcode" autocomplete="off" id="login-password" placeholder="password">
+              <!-- <p><h6 class="code-input">Input Login Code: </h6>
+              <input type="password" name="passcode" class="pin-input" id="login" pattern="\d*" maxlength="6" inputmode="numeric" title="Input 6 number PIN code" autocomplete="off" />
+                <br/><br/>-->
+                <input type="submit" value="Login" class="submit-btn"></p>
+              </form>
+          </div>
+        </div>
+      </div>
+      {% for message in messages %}
+          <button>{{message}}</button>
+        {% endfor %}
+        <div>
+          <a class="nav-link active" href="{% url 'password_reset' %}"
+          style="color:white; font-weight: bold; text-decoration: underline;">
+            Forgot password?
+          </a>
+        </div>
+
+
+    </div>
+  </section><!-- End Hero Section -->
+
+  <main id="main">
+
+   </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer class="mobile-view-footer">
+    <center>
+    <nav class="footer-nav">
+        <a href="{% url 'home' %}">
+            <i class="bi bi-house" style="font-size:25px;color:white"></i> 
+        </a>
+        <a href="{% url 'Membership:create_account' %}">
+            <i class="bi bi-person" style="font-size:25px;color:white"></i>
+        </a>
+        <a href="{% url 'main:contact' %}">
+            <i class="bi bi-envelope" style="font-size:25px;color:white"></i>
+        </a>
+        <a href="{% url 'ecommerce:product_list' %}">
+            <i class="bi bi-cart" style="font-size:25px;color:white"></i>
+        </a>
+    </nav>
+    </center>
+    </footer>
+
+  <!-- Vendor JS Files -->
+  <script src="{% static 'assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/aos/aos.js' %}"></script>
+  <script src="{% static 'assets/vendor/glightbox/js/glightbox.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/swiper/swiper-bundle.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/php-email-form/validate.js' %}"></script>
+
+  <!-- Template Main JS File -->
+  <script src="{% static 'assets/js/main.js' %}"></script>
+  <script src="{% static 'assets/js/newjs.js' %}"></script>
+  <script src="{% static 'assets/js/offline.js' %}"></script>
+  <script src="{% static 'assets/js/serviceworker.js' %}"></script>
+  <script src="{% static 'add-to-homescreen/src/addtohomescreen.js' %}"></script>
+  <script>
+    var ath = addToHomescreen( {
+        autostart: true,
+        lifespan: 5,
+        logging: true,
+        minSessions: 2,
+        onShow: function () {
+            console.log( "showing" );
+        },
+        onInit: function () {
+            console.log( "initializing" );
+        },
+        onAdd: function () {
+            console.log( "adding" );
+        },
+        onInstall: function () {
+            console.log( "Installing" );
+        },
+        onCancel: function () {
+            console.log( "Cancelling" );
+        },
+        customCriteria: true,
+        displayPace: 10,
+        customPrompt: {
+            title: "Install OMMCSL Lite App",
+            src: "{% static '../assets/img/omslogo.png' %}",
+            cancelMsg: "Not Now",
+            installMsg: "Install"
+        }
+    } );
+
+    var target = document.querySelector( ".log-target" );
+    if ( target ) {
+        target.innerText += "\r\nstandalone: " + window.navigator.standalone;
+    }
+
+    function clearToken() {
+        ath.clearSession(); // reset the user session
+    }
+
+    if ( "serviceWorker" in navigator ) {
+        navigator.serviceWorker.register( "{% static '../assets/js/serviceworker.js' %}" );
+    }
+</script>
+
+
+</body>
+
+</html>

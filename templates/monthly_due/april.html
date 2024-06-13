@@ -1,0 +1,61 @@
+{% extends 'navs/other_func_nav.html' %}
+
+{% block content %}
+{% load static %}
+
+<div class="container mt-3 py-4" style="font-weight:bolder; font-size: small;">
+  <h6 style="text-align:center;"> April Records </h6>
+  <hr>
+  {% for payment in april_payment %}
+    <table class="table">
+        <tr>
+            <th>Paid On:</th>
+            <td><h6>{{ payment.timestamp }}</h6></td>
+        </tr>
+        <tr>
+            <th>Member:</th>
+            <td><h6>{{ payment.client_name }}</h6></td>
+        </tr>
+        <tr>
+            <th>Total amount:</th>
+            <td>&#8358;{{ payment.amount }}</td>
+        </tr>
+        <tr>
+            <th>Status:</th>
+            <td>{% if payment.paid == True %}Paid{% else %}Pending payment{% endif %}</td>
+        </tr>
+    </table>
+    {% empty %}
+    <ul>
+      <li style="text-align:center">No available records yet.</li>
+    </ul>
+   {% endfor %}
+</div>
+</div>
+<hr>
+
+ <section class="form-container">
+        <div class="col-lg-6" data-aos="fade-up" data-aos-delay="250">
+          <form action="" method="post" role="form" class="main-form">
+            <h3>Monthly Payment</h3>
+            <h6>Every payment should be from &#8358;2000 and above</h6>
+            {% csrf_token %}
+            <div class="row">
+              <div class="col-md-6 form-group">
+                <input type="number" value="" name="amount" class="form-control" id="name" placeholder="&#8358;0.0">
+            </div>
+            </div>
+            <div class="text-center"><button type="submit">Proceed to Pay</button></div>
+          </form>
+        </div><!-- End Contact Form -->
+      </div>
+    </div>
+  </section><!-- End Contact Section -->
+
+
+<div style="text-align:center">
+    <a href="{% url 'Monthly_due:home_monthly' %}"><button class="submit-btn">Close</button></a>
+</div> 
+
+
+{% endblock %}  

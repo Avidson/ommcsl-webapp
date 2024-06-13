@@ -1,0 +1,57 @@
+
+{% extends "navs/payment_head.html" %}
+{% load widget_tweaks %}
+
+{% block content%}
+
+<div class="container mt-3">
+    <h5>Payment for {{ payment.payment_purpose }}</h5>
+    <ul class="object-tools">
+        <li>
+            <a href="#" onclick="window.print();">
+                Print payment
+            </a>
+        </li>
+    </ul>
+    <table class="table">
+        <tr>
+            <th>Created:</th>
+            <td><i>{{ payment.created }}</i></td>
+        </tr>
+        <tr>
+            <th>Member:</th>
+            <td><i>{{ payment.first_name }} {{ payment.last_name }}</i></td>
+        </tr>
+        <tr>
+            <th>E-mail:</th>
+            <td><a href="mailto:{{ payment.email }}"><i>{{ payment.email }}</i></a></td>
+        </tr>
+        <tr>
+            <th>Purpose:</th>
+            <td>
+                <i>{{ payment.payment_purpose }}</i>
+            </td>
+        </tr>
+        <tr>
+            <th>Total amount:</th>
+            <td><i>&#8358;{{ payment.get_amount }}</i></td>
+        </tr>
+        <tr>
+            <th>Status:</th>
+            <td>{% if payment.paid %}Paid{% else %}Pending payment{% endif %}</td>
+        </tr>
+        <tr>
+            <th>Paystack payment:</th>
+            <td>
+                {% if payment.paystack_ref %}
+                    ##################
+                {% endif %}
+            </td>
+        </tr>
+    </table>
+    <form action="" method="post">
+        <div class="text-center"><button type="submit">Pay Now</button></div>
+        {% csrf_token %}
+    </form>
+</div>
+{% endblock %}

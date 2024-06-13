@@ -1,0 +1,39 @@
+@import url(../css/colorsAndfonts.css);
+
+
+.form-container{
+  margin: 10px;
+  text-align: center;
+  align-items: center;
+  align-self: center;
+  align-content: center;
+  justify-content: center;
+}
+
+
+.text-center > button[type=submit] {
+        background: var(--color-primary);
+        border: 0;
+        padding: 12px 40px;
+        color: #fff;
+        transition: 0.4s;
+        margin-top: 10px;
+        margin-bottom: 25px;
+}
+
+.form-control {
+  margin: 15px;
+  width: fit-content;
+}
+
+.row {
+  text-align: center;
+  align-items: center;
+  align-self: center;
+  justify-content: center;
+}
+
+html, body {
+  min-height: 100vh;
+}
+      

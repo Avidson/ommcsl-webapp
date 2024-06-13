@@ -1,0 +1,30 @@
+{% extends 'ecommerce/nav/ecomNav.html' %}
+
+{% block content %}
+
+<div style="margin-left:40px; margin-right:40px;" class="row py-1 mt-5" data-aos="zoom-out" data-aos-delay="100">
+<h1 class="mr-3 text-danger" style="border-radius:16px">Search Result</h1>
+</div>
+<div class="row shadow border border-rounded" data-aos="zoom-out" data-aos-delay="100">
+
+<ul>
+  
+  <div class="row d-flex justify-content-center" style="margin-left:40px; margin-right:40px;">
+  <div class="col">
+  <div class="filtering">
+  <div class="ml-4 row">
+  {% for items in object_list %}
+  <div class="col py-2 mr-3">
+  <a href="{{items.get_absolute_url}}">
+  <img src="{{items.image.url}}" width="150px" height="150px" style="border-radius:10px"></a>
+  <p><a href="{{ items.get_absolute_url }}"><h3 style="text-decoration:none; color:red;">{{items.name}}</h3></a><br>
+  </div>
+  </div>
+  </div>
+  </div>
+
+  {% empty %}
+    <li>Item not available at the moment</li>
+  {% endfor %}
+
+{% endblock %}

@@ -1,0 +1,20 @@
+<h1>My Loans</h1>
+
+<table>
+  <tr>
+    <th>Borrower</th>
+    <th>Principal Amount</th>
+    <th>Interest Rate</th>
+    <th>Period (months)</th>
+    <th>EMI</th>
+  </tr>
+{% for loan in loans %}
+  <tr>
+    <td>{{ loan.customer.username }}</td>
+    <td>{{ loan.principal }}</td>
+    <td>{{ loan.interest_rate }}</td>
+    <td>{{ loan.period }}</td>
+    <td>{{ loan.emi }}</td>
+  </tr>
+{% endfor %}
+</table>

@@ -1,0 +1,263 @@
+{% extends 'navs/other_func_nav.html' %}
+{% load static %}
+
+
+{% block content %}
+
+
+
+<div style="margin: 10px; padding: 5px; margin-top: 60px; color:black; font-size: 15px;">
+    <center>
+        <div>
+            <img src="{% static 'assets/img/omslogo.png' %}" width='100' height='100'>
+        </div>
+        <h4>OMMCSL - Statement of Account</h4>
+        <p>{% if user.is_authenticated %}
+            Owner: {{user}} {% endif %}
+        </p>
+    </center>
+
+    <hr>
+    <div style="margin-top:15px; margin-bottom:15px;">
+        <table class="statement_table">
+    <h4><u>Donations</u></h4>
+            <thead>
+                <tr style="margin-right: 20px ;">
+                    <th>Amount</th>
+                    <th>Time Stamp</th>
+                </tr>
+            </thead>
+        <tbody>
+{% for i in inappdonation_transactions%}
+
+            <tr>
+                <td>&#8358;{{i.amount}}</td>
+                <td>{{i.timestamp}}</td>
+            </tr>
+            </tbody>
+{% empty %}
+<p><ul>
+    <li>There is no transaction history</li>
+    </ul></p>
+{% endfor %}
+</table>
+</div>
+
+<hr>
+<div style="margin-top:15px; margin-bottom:15px;">
+    <table class="">
+        <h4><u>Loan Statement</u></h4>
+                <thead>
+                    <tr style="margin-right: 20px;">
+                        <th>Amount</th>
+                        <th>Timestamp</th>
+                    </tr>
+                </thead>
+            <tbody>
+                {% for i in loan_request_transactions%}
+                <tr>
+                    <td>&#8358;{{i.loan_amount}} - </td>
+                    <td>EMI:&#8358;{{i.emi}}</td>
+                    <td>{{i.timestamp}}</td>
+                </tr>
+                </tbody></table>
+    {% empty %}
+    <p><ul>
+        <li>There is no transaction history</li>
+        </ul></p>
+    {% endfor %}
+
+</div>
+
+
+<hr>
+<div style="margin-top:15px; margin-bottom:15px;">
+    <table class="">
+        <h4><u>Monthly Due Statement</u></h4>
+                <thead>
+                    <tr style="margin-right: 20px;">
+                        <th>Amount</th>
+                        <th>Timestamp</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {% for transaction in january_transactions  %}
+                <tr>
+                    <td>&#8358;{{transaction.amount}} - </td>
+                    <td>{{transaction.timestamp}}</td>
+                </tr>
+                {% endfor %}
+                </tbody>
+                <tbody>
+                    {% for transaction in february_transactions  %}
+                    <tr>
+                        <td>&#8358;{{transaction.amount}} - </td>
+                        <td>{{transaction.timestamp}}</td>
+                    </tr>
+                    {% endfor %}
+                    </tbody>
+                    <tbody>
+                        {% for transaction in march_transactions  %}
+                        <tr>
+                            <td>&#8358;{{transaction.amount}} - </td>
+                            <td>{{transaction.timestamp}}</td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                    <tbody>
+                        {% for transaction in april_transactions  %}
+                        <tr>
+                            <td>&#8358;{{transaction.amount}} - </td>
+                            <td>{{transaction.timestamp}}</td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                    <tbody>
+                        {% for transaction in may_transactions  %}
+                        <tr>
+                            <td>&#8358;{{transaction.amount}} - </td>
+                            <td>{{transaction.timestamp}}</td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                    <tbody>
+                        {% for transaction in june_transactions  %}
+                        <tr>
+                            <td>&#8358;{{transaction.amount}} - </td>
+                            <td>{{transaction.timestamp}}</td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                    <tbody>
+                        {% for transaction in july_transactions  %}
+                        <tr>
+                            <td>&#8358;{{transaction.amount}} - </td>
+                            <td>{{transaction.timestamp}}</td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                    <tbody>
+                        {% for transaction in august_transactions  %}
+                        <tr>
+                            <td>&#8358;{{transaction.amount}} - </td>
+                            <td>{{transaction.timestamp}}</td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                    <tbody>
+                        {% for transaction in september_transactions  %}
+                        <tr>
+                            <td>&#8358;{{transaction.amount}} - </td>
+                            <td>{{transaction.timestamp}}</td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                    <tbody>
+                        {% for transaction in october_transactions  %}
+                        <tr>
+                            <td>&#8358;{{transaction.amount}} - </td>
+                            <td>{{transaction.timestamp}}</td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                    <tbody>
+                        {% for transaction in november_transactions  %}
+                        <tr>
+                            <td>&#8358;{{transaction.amount}} - </td>
+                            <td>{{transaction.timestamp}}</td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                    <tbody>
+                        {% for transaction in december_transactions  %}
+                        <tr>
+                            <td>&#8358;{{transaction.amount}} - </td>
+                            <td>{{transaction.timestamp}}</td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+</table>
+</div>
+
+<hr>
+<div style="margin-top:15px; margin-bottom:15px;">
+    <h4><u>Shares</u></h4>
+    <table>
+        <thead>
+            <tr style="margin-right: 20px ;">
+            
+                <th>Amount</th>
+                <th>Time Stamp</th>
+            </tr>
+        </thead>
+    <tbody>
+{% for i in shares_transactions%}
+        <tr class="statement_table">
+        
+            <td>&#8358;{{i.amount}}</td>
+            <td>{{i.timestamp}}</td>
+        </tr>
+        </tbody>
+{% empty %}
+<p><ul>
+    <li>There is no transaction history</li>
+    </ul></p>
+{% endfor %}
+</table>
+</div>
+
+
+<hr>
+<div style="margin-top:15px; margin-bottom:15px;">
+    <h4><u>Savings</u></h4>
+    <table>
+        <thead>
+            <tr style="margin-right: 20px ;">
+            
+                <th>Amount</th>
+                <th>Time Stamp</th>
+            </tr>
+        </thead>
+    <tbody>
+{% for i in topup_saving %}
+        <tr class="statement_table">
+          
+            <td>&#8358;{{i.amount}}</td>
+            <td>{{i.timestamp}}</td>
+        </tr>
+        </tbody>
+{% empty %}
+<p><ul>
+    <li>There is no transaction history</li>
+    </ul></p>
+{% endfor %}
+</table>
+</div>
+
+
+</div>
+
+<hr>
+<div style="margin: 10px; padding: 5px; color: black">
+    <table>
+        <thead>
+            <tr>
+                <th>Total Amount Transacted</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% if overall_total %}
+            <tr>
+                <td> &#8358;{{overall_total}}</td>
+            </tr>
+        </tbody></table>
+    {% endif %}
+</div>
+
+<hr>
+
+<a href="{% url 'main:account_statement_pdf' %}"><button class="submit-btn" style="margin-top: 30px;">Download</button></a>
+<hr>
+<a href="{% url 'main:dashboard' %}"><button class="submit-btn" style="margin-top: 30px;">Close</button></a>
+
+{% endblock %}

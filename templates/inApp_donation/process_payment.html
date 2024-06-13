@@ -1,0 +1,60 @@
+{% extends "navs/other_func_nav.html" %}
+{% load widget_tweaks %}
+
+{% block content%}
+
+<div class="container mt-3" style="font-weight:bolder">
+    <h6>Payment for {{ payment.payment_purpose }}</h6>
+    <ul class="object-tools">
+        <li>
+            <a href="#" onclick="window.print();">
+                Print payment
+            </a>
+        </li>
+    </ul>
+    <table class="table">
+        <tr>
+            <th>Created:</th>
+            <td><h6><i>{{ payment.created }}</i></h6></td>
+        </tr>
+        <tr>
+            <th>Member:</th>
+            <td><h6><i>{{ payment.client_name }}</i></h6></td>
+        </tr>
+        <tr>
+            <th>E-mail:</th>
+            <td><a href="mailto:{{ profile.email }}"><i>{{ profile.email }}</i></a></td>
+        </tr>
+        <tr>
+            <th>Purpose:</th>
+            <td>
+                <i>{{ payment.payment_purpose }}</i>
+            </td>
+        </tr>
+        <tr>
+            <th>Total amount:</th>
+            <td><i>&#8358;{{ payment.get_amount }}</i></td>
+        </tr>
+        <tr>
+            <th>Status:</th>
+            <td>{% if payment.paid %}Paid{% else %}Pending payment{% endif %}</td>
+        </tr>
+        <tr>
+            <th>Payment payment:</th>
+            <td>
+                {% if payment.payment_ref %}
+                    ##################
+                {% endif %}
+            </td>
+        </tr>
+    </table>
+    <form action="" method="post">
+        <div class="text-center"><button type="submit">Pay Now</button></div>
+        {% csrf_token %}
+    </form>
+</div>
+<center>
+    <br/><br/>
+        <a href="{% url 'main:dashboard' %}"><button class="submit-btn">Close</button></a>
+        </center>
+{% endblock %}

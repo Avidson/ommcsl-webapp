@@ -1,0 +1,144 @@
+
+@import url(../css/colorsAndfonts.css);
+
+#other-func-background {
+    background: url('') center;
+}
+
+.shares_container {
+    margin-top: 30px;
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+.loan-request-form {
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    text-align: center;
+}
+
+.top-check {
+    background-color: var(--color-primary);
+    border-radius: 50%;
+    width: 55px;
+    height: 50px;
+    color: white;
+}
+
+.top-check > i {
+    font-weight: 400px;
+    font-size: xx-large;
+    margin-top: 40px;
+}
+
+.row {
+    margin-top: 30px;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    align-self: center;
+}
+
+.row-2 {
+    margin-top: 20px;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    align-self: center;
+}
+
+.list-of-shares-bought > a > button, .buy-shares > a > button{
+    width: 100px;
+    height: 100px;
+    color: white;
+    background-color: var(--color-primary);
+    font-weight: bolder;
+    border-style: double;
+    border-color: var(--color-primary);
+    margin-bottom: 10px;
+}
+/* 
+
+/* Monthly Due boxes css */
+section > .dashboard-utils > div > a > button {
+    width: 100px;
+    height: 100px;
+    background-color: var(--color-primary);
+    color: white;
+    font-weight: bolder;
+    font-size: small;
+    justify-content: center;
+    justify-self: center;
+    align-items: center;
+    align-self: center;
+    text-align: center;
+    padding: 10px;
+    margin-left: 0px;
+    border-style: none;
+   
+}
+
+.footer #footer {
+    margin-top: 10px;
+}
+
+.statement-table {
+    display: grid;
+    grid-template-columns: 2fr 2fr 2fr;
+    border-style: groove;
+    border-radius: 0;
+    border: 1
+}
+
+.page-contact {
+    min-height: 100vh;
+}
+
+html, body {
+    min-height: 100vh;
+}
+
+#main {
+    min-height: 100vh;
+}
+
+.feedback-form {
+    width: 290px;
+    border-radius: 20px;
+    height: 40px;
+    border-style: none brown;
+    border-color: brown;
+}
+.feedback-form-textarea {
+    width: 290px;
+    border-radius: 10px;
+    height: 200px;
+    border-style: none brown;
+    border-color: brown;
+}
+
+/* applying styling for dashboard desktop view */
+
+@media screen and (min-width:768px) and (max-width:960px) {
+    #dashboard-main {
+        margin-left : 80px;
+        margin-right : 80px;
+    }
+    .dashboard-main {
+        margin-left : 80px;
+        margin-right : 80px;
+    }
+}
+
+@media screen and (min-width:961px) and (max-width:1600px) {
+    #dashboard-main {
+        margin-left : 150px;
+        margin-right : 150px;
+    }
+    .dashboard-main {
+        margin-left : 150px;
+        margin-right : 150px;
+    }
+}
+

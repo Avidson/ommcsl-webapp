@@ -1,0 +1,42 @@
+
+
+<div class="container mt-3">
+     
+    <table class="table">
+        <tr>
+            <th>Created:</th>
+            <td><i>{{ payment.payment_date }}</i></td>
+        </tr>
+        <tr>
+            <th>Member:</th>
+            <td><i>{{ payment.profile_owner }}</i></td>
+        </tr>
+        <tr>
+            <th>E-mail:</th>
+            <td><a href="mailto:{{ payment.email }}"><i>{{ payment.email }}</i></a></td>
+        </tr>
+        <tr>
+            <th>Purpose:</th>
+            <td>
+                <i>{{ payment.payment_purpose }}</i>
+            </td>
+        </tr>
+        <tr>
+            <th>Total amount:</th>
+            <td><i>&#8358;{{ payment.registration_fee }}</i></td>
+        </tr>
+        <tr>
+            <th>Status:</th>
+            <td>{% if payment.paid %}Paid{% else %}Pending payment{% endif %}</td>
+        </tr>
+        <tr>
+            <th>Paystack payment:</th>
+            <td>
+                {% if payment.payment_ref %}
+                    ##################
+                {% endif %}
+            </td>
+        </tr>
+    </table>
+</div>
+

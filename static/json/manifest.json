@@ -1,0 +1,85 @@
+{
+    "short_name": "OMMCSL Lite",
+    "name": "For Cooperative Loans!",
+    "icons": [
+        {
+            "src": "../assets/img/omslogo.png",
+            "type": "image/svg+xml",
+            "sizes" : "192x192",
+            "purpose" : "any"
+        },
+        {
+            "src": "../assets/img/omslogo.png",
+            "type": "image/svg+xml",
+            "sizes" : "512x512",
+            "purpose" : "any"
+        }
+
+    ],
+    "id": "/?source=pwa",
+    "start_url" : "/?source=pwa",
+    "background_color": "#922c17",
+    "theme_color" : "#922c17",
+    "display": "standalone",
+    "scope":  "/",
+    "description": "Loan App For Cooperative Society",
+    "orientation": "any",
+    "categories": ["finance", "Business"],
+    "lang": "en",
+    "shortcuts": [
+        {
+            "name": "Become a member by creating an account",
+            "short_name": "Membership",
+            "description": "Register to have access to loans",
+            "url": "/?source=pwa",
+            "icons": [{ "src": "../assets/img/omslogo.png", "sizes": "192x192" }]
+        }
+    ],
+
+    "screenshots": [
+        {
+            "src":"../assets/img/screenshot1.png",
+            "sizes":"540x720",
+            "type":"image/png",
+            "form_factor": "narrow"
+        },
+        {
+            "src":"../assets/img/screenshot2.png",
+            "sizes":"540x720",
+            "type":"image/png",
+            "form_factor": "narrow"
+        },
+        {
+            "src":"../assets/img/screenshot3.png",
+            "sizes":"540x720",
+            "type":"image/png",
+            "form_factor": "narrow"
+        }
+    ],
+
+    "launch_handler": [
+        {
+        "client_mode": "navigate-existing"
+        }
+    ],
+
+
+    "web_apps": [
+        {
+        "web_app_identity": "https://checkout.paystack.com/"
+        }
+    ],
+
+    "edge_side_panel": [
+      {
+        "preferred_width": 400
+        }
+    ],
+
+    "display_override": [
+        "standalone",
+        "browser",
+        "window-controls-overlay"
+    ]
+
+}

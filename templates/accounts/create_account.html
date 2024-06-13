@@ -1,0 +1,53 @@
+{% extends 'navs/account_nav.html' %}
+
+
+
+
+{% block content %}
+
+<center>
+
+  <section id="" class="">
+
+ <div class="col-lg-6" data-aos-delay="250">
+
+  <h2 style="font-weight:bolder; color:brown">CREATE ACCOUNT</h2>
+
+    <form action="" method="post" role="form" class="php-email-form">
+      {% csrf_token %}
+      <div class="row">
+        <div>{{form.username}}</div>
+        <div>{{form.password1}}</div>
+        <div>{{form.password2}}</div>
+        <div>
+        {% for message in messages %}
+        <button>Error!! <br/>{{message}}</button>
+        {% endfor %}
+        </div>
+      </div>
+      
+      <div class="text-center">
+        <button type="submit" id='create-account-submit'>Create Account</button></div>
+        <p id="wrong_pass_alert"></p>
+        <h6 style="font-size:small">By clicking the “Create Account” <br>button, you agree to
+           OMMCSL <a href="#" style="color:black">terms and conditions.</a></h6>
+      </div>
+    </form>
+
+  </div>
+</section>
+
+ </center>
+ <script>
+
+  var form_fields = document.getElementsByTagName('input')
+  form_fields[1].placeholder='Nickname';
+  form_fields[2].placeholder='Password';
+  form_fields[3].placeholder='Re-enter password'
+
+  for(var field in form_fields) {
+    form_fields[field].className = 'create_account_form'
+  }
+
+  </script>
+{% endblock %}

@@ -1,0 +1,53 @@
+{% extends "navs/other_func_nav.html" %}
+ 
+ 
+ {% block content %}
+ {% load static %}
+ 
+ <!-- ======= Contact Section ======= -->
+
+ {% if user.is_authenticated %}
+
+ <section class="form-container">
+
+        <div class="col-lg-6">
+
+          <form action="" method="post" role="form" class="main-form">
+            <h3>PAYMENT</h3>
+            {% csrf_token %}
+            <div class="row">
+              <div class="col-md-6 form-group">
+              <div class="col-md-6 form-group mt-3 mt-md-0">
+                <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
+              </div>
+              <div class="col-md-6 form-group">
+                <input type="text" name="option" list="options" class="form-control" id="name" placeholder="Choose Purpose of Payment" required>
+                <datalist id="options">
+                    <option value="Support Donation"></option>
+                </datalist>
+              </div>
+              <div class="col-md-6 form-group">
+                <input type="number" name="amount" class="form-control" id="name" placeholder="&#8358;0.0" required>
+              </div>
+            </div>
+            <div class="text-center"><button type="submit">Proceed to Pay</button></div>
+          </form>
+
+        </div>
+        <!-- End Contact Form -->
+
+      </div>
+    </div>
+    <div>
+      <a href="{% url 'main:dashboard' %}">
+          <button class="submit-btn">Close</button>
+              </a>
+      </div>
+</section>
+  <!-- End Contact Section -->
+
+{% else %}
+  <h6>You need to sign-in to perform this task</h6>
+{% endif %}
+
+{% endblock %}

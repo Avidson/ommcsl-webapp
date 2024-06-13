@@ -1,0 +1,55 @@
+{% extends 'navs/dashboard_nav.html' %}
+
+
+{% block content %}
+{% load static %}
+
+   <center>
+    
+    <section id="contact" class="verify-class">
+      
+        <form action="" method="post" role="form" class="php-email-form" enctype="multipart/form-data">
+        {% csrf_token %}
+        <fieldset>
+          <button class='verification'
+          style="border-radius: 50%; background-color:brown; 
+          width: 70px; height:70px; color:white; 
+          font-weight: bolder; border-style: none; margin-bottom: 20px;">
+          <i class="bi bi-check" style="font-weight: bolder; font-size:xx-large;"></i><br></button>
+          <legend style="font-family:'Courier New', Courier, monospace">Let's Verify You</legend>
+          
+            <div class="row">
+          <div class="col-md-6 form-group">
+            <span><i class="bi bi-phone"></i></span><span></span><b>Number</b><br/>
+            <input type="text" name="phone-number" class="form-control" id="email" placeholder="Enter Phone Number" required>
+          </div>
+          <div class="col-md-6 form-group mt-3 mt-md-0">
+            <span><i class="bi bi-person"></i></span><span></span><b>Government ID Type</b><br/>
+            <input type="text" class="form-control" name="id-type" id="subject" list='ids' placeholder="Choose Id Type" required>
+            <datalist id="ids">
+              <option value="National Identification Number (NIN)">
+                    <option value="Voter's Card">
+              </datalist>
+              </div>
+        
+          
+            <div class="col-md-6 form-group">
+            <p><img id="output" width="200"/></p>
+            <span><i class="bi bi-camera"></i></span><span></span><b>Select ID Image</b><br/>
+            <input type="file" name="id-image" accept="image/*" onchange="loadFile(event)" required>
+           </div>
+          </div>
+                
+           <div class="text-center"><button type="submit">Submit</button></div>
+        </fieldset>
+        </form>
+        <div>
+          <a href="{% url 'main:dashboard' %}">
+              <button class="submit-btn">Close</button>
+                  </a>
+          </div>
+        </section>
+        </center>
+
+
+{% endblock %}

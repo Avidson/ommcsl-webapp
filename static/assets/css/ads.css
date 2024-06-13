@@ -1,0 +1,16 @@
+
+
+.ad-info-font {
+    font-size: small;
+    text-align: center;
+    color: black;
+}
+
+.dashboard-profile {
+    display: grid;
+    grid-template-columns: 3fr 3fr;
+}
+
+a {
+    font-size: small;
+}

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>OMMCSL</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  {% load static %}
+  <!-- Favicons -->
+  <link href="{% static 'assets/img/omslogo.png' %}" rel="icon">
+  <link href="{% static 'assets/img/omslogo.png' %}" rel="apple-touch-icon">
+
+
+  {% load static %}
+  <!-- Vendor CSS Files -->
+  <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/aos/aos.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/remixicon/remixicon.css' %}" rel="stylesheet">
+
+  {% load static %}
+  <!-- Template Main CSS File -->
+  <link href="{% static 'assets/css/main.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/css/passcode.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/css/shares.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/css/inAppdonations.css' %}" rel="stylesheet">
+
+</head>
+
+<body class="page-contact" id="other-func-background">
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="header d-flex align-items-center fixed-top">
+  </header><!-- End Header -->
+
+  <main id="main">
+
+<center>
+
+    <div class="py-5">
+
+        <h4 style="color:gray">
+            <i>You may be having a poor network connection</i></h4>
+            <h6 style="color:gray">Please check your network</h6>
+            <br/>
+            <h1 style="color:gray"><strikethrought>OMMCSL</strikethrought>
+            </h1>
+            <h6 style="color:gray">OMMCSL - NETWORK ERROR!!</h6>
+            <br/><br/>
+            <a href="{% url 'main:registration-fee' %}">
+              <button type='button' class='offline-btn'>&#8635; reload</button>
+            </a>
+        <div>
+
+        </div>
+
+    </div>
+
+</center>
+
+</main>
+
+  <script src="{% static 'assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/aos/aos.js' %}"></script>
+  <script src="{% static 'assets/vendor/glightbox/js/glightbox.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/swiper/swiper-bundle.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/php-email-form/validate.js' %}"></script>
+
+  <!-- Template Main JS File -->
+  <script src="{% static 'assets/js/main.js' %}"></script>
+  <script src="{% static 'assets/js/newjs.js' %}"></script>
+  <script src="{% static 'assets/js/offline.js' %}"></script>
+  <script src="{% static 'assets/js/serviceworker.js' %}"></script>
+
+</body>
+
+</html>
+

@@ -1,0 +1,61 @@
+{% extends 'navs/dashboard_nav.html' %}
+
+{% block content %}
+{% load static %}
+
+<div class="shares-container" style="margin-left:15px; margin-right:25px;">
+    
+    <form action="" method="post" role="form" class="php-email-form" enctype="multipart/form-data">
+        {% csrf_token %}
+        
+        <div class="row">
+            <center>
+          <div class="form-group mt-3"><br>
+            <h6 style="font-weight:bold; color:rgb(112, 40, 40)">Loan Amount</h6>
+            <input type="number" name="loan-amount" class="form-control" id="name" placeholder="&#8358;0.0" required>
+          </div>
+        
+          <div class="form-group mt-3"><br>
+            <h6 style="font-weight:bold; color:rgb(112, 40, 40)">Number of Months</h6>
+            <input type="number" class="form-control" name="loan-period" id="subject" list='listofmonths' placeholder="Number of Months" required>
+                <datalist id="listofmonths">
+                  <option value="3"><option value="6"><option value="12">
+                    </datalist>
+                  </div>
+  
+        <div class="form-group mt-3"><br>
+            <h6 style="font-weight:bold; color:rgb(112, 40, 40)">Account Number</h6>
+          <input type="number" class="form-control" name="account-number" id="subject" placeholder="Account Number" required>
+        </div>
+        <div class="form-group mt-3"><br>
+            <h6 style="font-weight:bold; color:rgb(112, 40, 40)">Account Name</h6>
+            <input type="text" class="form-control" name="account-name" id="subject" placeholder="Account Name" required>
+          </div>
+    
+        <div class="form-group mt-3"><br>
+            <h6 style="font-weight:bold; color:rgb(112, 40, 40)">Bank Name</h6>
+            <input type="text" class="form-control" name="bank-name" id="subject" placeholder="Bank Name" required>
+          </div>
+        <div class="form-group mt-3"><br>
+            <h6 style="font-weight:bold; color:rgb(112, 40, 40)">Purpose For Loan</h6>
+          <textarea class="form-control" name="purpose-for-loan" rows="5" placeholder="Message" required></textarea>
+        </div>
+        </center>
+       </div>
+        <div class="text-center"><button type="submit">Submit Request</button></div>
+    
+    </form>
+      
+</div>
+<div>
+  <center>
+  <a href="{% url 'main:dashboard' %}">
+      <button class="submit-btn">Close</button>
+          </a>
+          </center>
+  </div>
+
+
+
+
+{% endblock %}

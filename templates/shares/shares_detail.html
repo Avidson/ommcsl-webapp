@@ -1,0 +1,23 @@
+{% extends 'navs/other_func_nav.html' %}
+
+
+{% block content %}
+{% load static %}
+
+<center style="margin-top:20px ;">
+<h1>SHARES DETAIL</h1>
+
+<h3>Detail about your shares will appear here once our system confirmed it.</h3>
+
+</a>
+</center>
+
+<div>
+    <center>
+        <a href="{% url 'main:dashboard' %}">
+        <button class="submit-btn">Close</button>
+            </a>
+    </center>
+    </div>
+
+{% endblock %}

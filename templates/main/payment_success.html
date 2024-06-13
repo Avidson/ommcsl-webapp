@@ -1,0 +1,18 @@
+{% extends "navs/other_func_nav.html" %}
+{% load widget_tweaks %}
+
+{% block content%}
+
+<center>
+<div class="container mt-3">
+    <button class="text-center"
+style="border-radius: 50%; background-color:brown; 
+width: 70px; height:70px; color:white; 
+font-weight: bolder; border-style: none; margin-top: 20px;">
+<i class="bi bi-check" style="font-weight: bolder; font-size:xx-large;"></i><br></button>
+    <h1>Your payment was successful</h1>
+    <p>Your payment has been processed successfully.</p>
+</div>
+</center>
+<meta http-equiv="refresh" content="6, url={% url 'main:dashboard' %}">
+{% endblock %}

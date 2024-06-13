@@ -1,0 +1,46 @@
+ {% extends 'navs/payment_head.html' %}
+ 
+ 
+ {% block content %}
+ 
+ <!-- ======= Contact Section ======= -->
+ <section id="contact" class="contact">
+    <div class="container position-relative" data-aos="fade-up">
+
+             <div class="col-lg-6" data-aos="fade-up" data-aos-delay="250">
+
+          <form action="" method="post" role="form" class="php-email-form">
+            <h3>PAYMENT</h3>
+            {% csrf_token %}
+            <div class="row">
+              <div class="col-md-6 form-group">
+                <input type="text" name="first-name" class="form-control" id="name" placeholder="First Name" required>
+              </div>
+              <div class="col-md-6 form-group">
+                <input type="text" name="last-name" class="form-control" id="name" placeholder="Last Name" required>
+              </div>
+              <div class="col-md-6 form-group mt-3 mt-md-0">
+                <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
+              </div>
+              <div class="col-md-6 form-group">
+                <input type="text" name="option" list="options" class="form-control" id="name" placeholder="Choose Purpose of Payment" required>
+                <datalist id="options">
+                    <option value="Support Donation"></option>
+                    <option value="Membership Registration"></option>
+                </datalist>
+              </div>
+              <div class="col-md-6 form-group">
+                <input type="number" name="amount" class="form-control" id="name" placeholder="N0.0" required>
+              </div>
+            </div>
+            <div class="text-center"><button type="submit">Proceed to Pay</button></div>
+          </form>
+
+        </div><!-- End Contact Form -->
+
+      </div>
+
+    </div>
+  </section><!-- End Contact Section -->
+
+  {% endblock %}

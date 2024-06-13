@@ -1,0 +1,117 @@
+{% extends 'ecommerce/nav/checkoutNav.html' %}
+
+{% block content %}
+         <!-- Modal Search Start -->
+         <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-fullscreen">
+                <div class="modal-content rounded-0">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Search by keyword</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body d-flex align-product-center">
+                        <form action="{% url 'ecommerce:search_results' %}" method="get">
+                            <div class="input-group w-75 mx-auto d-flex">
+                            <input type="text" name="q" class="form-control p-3" placeholder="Search for Products" aria-describedby="search-icon-1">
+                            <input type="submit" value="Search" class="input-group-text p-3">
+                            </span>
+                        </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal Search End -->
+
+
+        <!-- Single Page Header start -->
+        <div class="container" style="background-color: #922c17">
+            <h1 class="text-center text-white display-6">Checkout</h1>
+        </div>
+        <!-- Single Page Header End -->
+
+
+
+        <!-- Checkout Page Start -->
+        <div class="container">
+            <div class="container">
+                    <div class="order-info">
+                    <h3>Your Order</h3>
+                    
+                </div>
+                <form method="post" class="order-form">
+                {{ form.first_name }}
+                {{ form.last_name }}
+                {{ form.email }}
+                {{ form.address }}
+                {{ form.city }}
+                {{ form.phone }}
+                
+            
+                        <div class="col-md-12 col-lg-6 col-xl-5 py-4">
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Products</th>
+                                            <th scope="col">Price</th>
+                                            <th scope="col">Quantity</th>
+                                            <th scope="col">Total</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {% for item in cart %}
+                                        <tr>
+                                            <td class="py-5">{{ item.product.name }}</td>
+                                            <td class="py-5">&#8358;{{ item.price }}</td>
+                                            <td class="py-5">{{ item.quantity }}</td>
+                                            <td class="py-5">&#8358;{{ item.total_price }}</td>
+                                        </tr>
+                                        {% endfor %}
+                                        <tr>
+                                            <th scope="row">
+                                            </th>
+                                            <td class="">
+                                                <p class="mb-0 text-dark text-uppercase py-3">TOTAL</p>
+                                            </td>
+                                            <td class="">
+                                                <div class="py-3 border-bottom border-top">
+                                                    <p class="mb-0 text-dark">&#8358;{{ cart.get_total_price }}</p>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="row g-4 text-center align-items-center justify-content-center">
+                                <button type="button" class="btn border-danger py-2 px-4 text-uppercase w-100 text-danger">Place Order</button>
+                            </div>
+                            {% csrf_token %}
+                            </form>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!-- Checkout Page End -->
+        <script>
+
+            var form_fields = document.getElementsByTagName('input')
+            form_fields[2].placeholder='First name';
+            form_fields[3].placeholder='Last Name';
+            form_fields[4].placeholder='E-mail';
+            form_fields[5].placeholder='Address';
+            form_fields[6].placeholder='City';
+            form_fields[7].placeholder='Phone Number'
+                      
+            for(var field in form_fields) {
+              form_fields[field].className = 'create_account_form'
+            }
+            
+          
+            </script>
+
+{% endblock %}
+
+ 

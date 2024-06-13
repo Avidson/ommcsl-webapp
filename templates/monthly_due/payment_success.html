@@ -1,0 +1,16 @@
+{% extends "navs/other_func_nav.html" %}
+{% load widget_tweaks %}
+
+{% block content%}
+
+
+<div class="container mt-3" style="text-align:center;">
+    <h1>Your payment was successful</h1>
+    <p>Thank you.</p>
+</div>
+<div>
+    <a href="{% url 'main:dashboard' %}">
+        <button class="submit-btn">Close</button>
+            </a>
+    </div>
+{% endblock %}

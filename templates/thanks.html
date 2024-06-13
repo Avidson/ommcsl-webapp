@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>OMMSCL- Dashboard</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  {% load static %}
+  <!-- Favicons -->
+  <link href="{% static 'assets/img/omslogo.png' %}" rel="icon">
+  <link href="{% static 'assets/img/omslogo.png' %}" rel="apple-touch-icon">
+
+
+  {% load static %}
+  <!-- Vendor CSS Files -->
+  <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/aos/aos.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/remixicon/remixicon.css' %}" rel="stylesheet">
+
+  {% load static %}
+  <!-- Template Main CSS File -->
+  <link href="{% static 'assets/css/main.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/css/passcode.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/css/shares.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/css/inAppdonations.css' %}" rel="stylesheet">
+
+
+</head>
+
+
+
+<body>
+
+<center style="margin-top: 100px">
+    <button class="text-center"
+style="border-radius: 50%; background-color:brown; 
+width: 70px; height:70px; color:white; 
+font-weight: bolder; border-style: none; margin-top: 20px;">
+<i class="bi bi-check" style="font-weight: bolder; font-size:xx-large;"></i><br></button>
+    
+    <p><h1 style="font-weight: bolder;">Thank you!</h1></p>
+
+    <p><h2>It's was Successful!</h2></p>
+
+</center>
+
+<!-- For page redirection after stipulate time -->
+<meta http-equiv="refresh" content="6, url={% url 'home' %}">
+
+</body>
+
+
+</html>
+
+
+ 

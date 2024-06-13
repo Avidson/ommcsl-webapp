@@ -1,0 +1,72 @@
+{% extends 'navs/other_func_nav.html' %}
+
+{% block content %}
+{% load static %}
+<h4 style="text-align:center; color:brown; font-weight: bolder; margin-top: 30px;">Monthly Due Records</h4>
+<section id='dashboard-section' class="py-4">
+<div class="dashboard-utils" style="grid-gap:5px;">
+<div class="" style="border-spacing:5px">
+    <a href="{% url 'Monthly_due:januarydue' %}"><button><i class="bi bi-clock"></i><br>January<br>Book</button></a>
+</div>
+
+<div class="">
+    <a href="{% url 'monthdue_february:februarydue' %}"><button><i class="bi bi-clock"></i><br>February<br>Book</button></a>
+</div>
+
+<div class="">
+    <a href="{% url 'monthdue_march:marchdue' %}"><button><i class="bi bi-clock"></i><br>March<br>Book</button></a>
+    
+</div>
+
+<div class="">
+    <a href="{% url 'monthdue_april:aprildue' %}"><button><i class="bi bi-clock"></i><br>April<br>Book</button></a>
+
+</div>
+
+<div class="">
+    <a href="{% url 'monthdue_may:maydue' %}"><button><i class="bi bi-clock"></i><br>May<br>Book</button></a>
+
+</div>
+
+<div class="">
+    <a href="{% url 'monthdue_june:junedue' %}"><button><i class="bi bi-clock"></i><br>June<br>Book</button></a>
+
+</div>
+
+<div class="">
+    <a href="{% url 'monthdue_july:julydue' %}"><button><i class="bi bi-clock"></i><br>July<br>Book</button></a>
+
+</div>
+
+<div class="">
+    <a href="{% url 'monthdue_august:augustdue' %}"><button><i class="bi bi-clock"></i><br>August<br>Book</button></a>
+
+</div>
+
+<div class="">
+    <a href="{% url 'monthdue_september:septemberdue' %}"><button><i class="bi bi-clock"></i><br>September<br>Book</button></a>
+
+</div>
+
+<div class="">
+    <a href="{% url 'monthdue_october:octoberdue' %}"><button><i class="bi bi-clock"></i><br>October<br>Book</button></a>
+
+</div>
+
+<div class="">
+    <a href="{% url 'monthdue_november:novemberdue' %}"><button><i class="bi bi-clock"></i><br>November<br>Book</button></a>
+
+</div>
+
+<div class="">
+    <a href="{% url 'monthdue_december:decemberdue' %}"><button><i class="bi bi-clock"></i><br>December<br>Book</button></a>
+
+</div>
+
+</div>
+<center>
+<br/><br/>
+    <a href="{% url 'main:dashboard' %}"><button class="submit-btn">Close</button></a>
+    </center>
+</section>
+{% endblock %}
